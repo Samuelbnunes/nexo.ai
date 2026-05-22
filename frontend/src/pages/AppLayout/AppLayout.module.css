@@ -1,0 +1,459 @@
+/* ================================
+   LAYOUT PRINCIPAL COM SIDEBAR
+================================ */
+.appLayout {
+  display: flex;
+  min-height: 100vh;
+  background: #F8FAFC;
+}
+
+/* ================================
+   SIDEBAR
+================================ */
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: #fff;
+  border-right: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+.sidebarHeader {
+  padding: 1.5rem 1.25rem 1rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.sidebarLogo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #4F46E5;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.sidebarLogo span { color: #0F172A; }
+
+.sidebarNav {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navSection {
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+  padding: 0 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #94A3B8;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.875rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: all 0.15s;
+  position: relative;
+}
+
+.navItem:hover {
+  background: #F1F5F9;
+  color: #1E293B;
+}
+
+.navItem--active {
+  background: #EEF2FF;
+  color: #4F46E5;
+  font-weight: 600;
+}
+
+.navItem--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 3px;
+  background: #4F46E5;
+  border-radius: 0 4px 4px 0;
+}
+
+.navIcon { font-size: 1.1rem; min-width: 20px; }
+.navBadge {
+  margin-left: auto;
+  background: #4F46E5;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+/* ── Perfil do usuário na sidebar ── */
+.sidebarUser {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #F1F5F9;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4F46E5, #818CF8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.userDetails { overflow: hidden; }
+
+.userEmail {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1E293B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userPlan {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.15rem;
+}
+
+.userPlanBadge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: #EEF2FF;
+  color: #4F46E5;
+}
+
+.userCredits {
+  font-size: 0.72rem;
+  color: #64748B;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 0.875rem;
+  border-radius: 8px;
+  border: 1px solid #FEE2E2;
+  background: transparent;
+  color: #EF4444;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover { background: #FFF5F5; }
+
+/* ================================
+   ÁREA DE CONTEÚDO
+================================ */
+.mainContent {
+  margin-left: 260px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Topbar ── */
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #E2E8F0;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.topbarTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.topbarCredits {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #EEF2FF;
+  color: #4F46E5;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.875rem;
+  border-radius: 999px;
+}
+
+/* ── Conteúdo da Página ── */
+.pageContent {
+  padding: 2rem;
+  flex: 1;
+}
+
+/* ================================
+   SEÇÃO: NOVA ANÁLISE (UPLOAD)
+================================ */
+.uploadSection {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 0.4rem;
+}
+
+.sectionSubtitle {
+  color: #64748B;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.resetButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: #4F46E5;
+  border: 1.5px solid #4F46E5;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+}
+
+.resetButton:hover { background: #EEF2FF; }
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .comparisonGrid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4F46E5;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.textContent {
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ================================
+   SEÇÃO: HISTÓRICO
+================================ */
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+}
+
+.historyCard {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.historyCard:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+
+.historyCard__info { flex: 1; }
+.historyCard__job { font-size: 0.95rem; font-weight: 600; color: #1E293B; }
+.historyCard__date { font-size: 0.8rem; color: #94A3B8; margin-top: 0.2rem; }
+.historyCard__badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #94A3B8;
+}
+
+.emptyState__icon { font-size: 3rem; margin-bottom: 1rem; }
+.emptyState__text { font-size: 1rem; font-weight: 500; }
+.emptyState__sub { font-size: 0.875rem; margin-top: 0.4rem; }
+
+/* ================================
+   SEÇÃO: CONTA
+================================ */
+.accountCard {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 560px;
+}
+
+.accountAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4F46E5, #818CF8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.accountField { margin-bottom: 1.25rem; }
+.accountLabel { font-size: 0.8rem; font-weight: 600; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem; }
+.accountValue { font-size: 1rem; font-weight: 500; color: #1E293B; }
+
+.accountPlanBox {
+  background: linear-gradient(135deg, #EEF2FF, #F5F3FF);
+  border: 1.5px solid #C7D2FE;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.accountPlanName { font-weight: 700; font-size: 0.95rem; color: #4F46E5; }
+.accountPlanCredits { font-size: 0.85rem; color: #6366F1; margin-top: 0.2rem; }
+.upgradeBadge {
+  background: #4F46E5;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.875rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+.upgradeBadge:hover { background: #4338CA; }
+
+/* ================================
+   MOBILE: Hamburguer
+================================ */
+.mobileToggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 60;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 45;
+}
+
+@media (max-width: 768px) {
+  .mobileToggle { display: block; }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .overlay--open { display: block; }
+
+  .mainContent {
+    margin-left: 0;
+  }
+
+  .topbar { padding: 1rem 1rem 1rem 4rem; }
+  .pageContent { padding: 1.25rem; }
+}

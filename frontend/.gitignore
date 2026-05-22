@@ -1,0 +1,39 @@
+# ── Dependências ──────────────────────────────
+node_modules/
+
+# ── Build de produção ─────────────────────────
+dist/
+dist-ssr/
+build/
+
+# ── Variáveis de ambiente ─────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Cache do Vite ────────────────────────────
+.vite/
+.vite-cache/
+
+# ── Cache TypeScript ─────────────────────────
+*.tsbuildinfo
+
+# ── Logs ─────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── IDEs ─────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ── Testes ───────────────────────────────────
+coverage/
+
+# ── Sistema Operacional ───────────────────────
+.DS_Store
+Thumbs.db
